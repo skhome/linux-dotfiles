@@ -6,6 +6,8 @@ export BLUE=`tput setaf 4`
 export MAGENTA=`tput setaf 5`
 export CYAN=`tput setaf 6`
 export WHITE=`tput setaf 7`
+export BOLD=`tput bold`
+export RESET=`tput sgr0`
 
 function parse_git_branch() {
 	local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -17,6 +19,6 @@ function parse_git_branch() {
 	fi
 }
 
-export PS1="\[${CYAN}\]\u \[$WHITE\]at \[$BLUE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$(parse_git_branch)\[$WHITE\]\n\$ "
-export PS2="\[$ORANGE\]→ \[$RESET\]"
+export PS1="\[$BOLD\]\[$RED\]\u \[$WHITE\]at \[$BLUE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$(parse_git_branch)\[$WHITE\]\[$RESET\]\n\$ "
+export PS2="\[$RED\]→ \[$RESET\]"
 
