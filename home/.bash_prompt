@@ -1,0 +1,22 @@
+export GRAY=`tput setaf 0`
+export RED=`tput setaf 1`
+export GREEN=`tput setaf 2`
+export YELLOW=`tput setaf 3`
+export BLUE=`tput setaf 4`
+export MAGENTA=`tput setaf 5`
+export CYAN=`tput setaf 6`
+export WHITE=`tput setaf 7`
+
+function parse_git_branch() {
+	local branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+	if [ -n "${branch}" ]; then
+		[ "${branch}" == "HEAD" ] && local branch=$(git rev-parse --short HEAD 2>/dev/null)
+		local status=$(git status --porcelain 2>/dev/null)
+		echo -n " on ${MAGENTA}${branch}"
+		[ -n "${status}" ] && echo -n "*"
+	fi
+}
+
+export PS1="\[${CYAN}\]\u \[$WHITE\]at \[$BLUE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$(parse_git_branch)\[$WHITE\]\n\$ "
+export PS2="\[$ORANGE\]→ \[$RESET\]"
+
