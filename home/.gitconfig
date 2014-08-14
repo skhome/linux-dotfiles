@@ -4,8 +4,8 @@
 	pu = push
 	fe = fetch --prune
 	df = diff --color
-    ls = log --color --oneline --pretty=format:'%C(yellow bold)%h%Creset -%C(red bold)%d%Creset %s %C(blue)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
-    lg = log --color --graph --pretty=format:'%C(yellow bold)%h%Creset -%C(red bold)%d%Creset %s %C(blue)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
+	ls = log --color --oneline --pretty=format:'%C(yellow bold)%h%Creset -%C(red bold)%d%Creset %s %C(blue)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
+	lg = log --color --graph --pretty=format:'%C(yellow bold)%h%Creset -%C(red bold)%d%Creset %s %C(blue)(%cr) %C(magenta)<%an>%Creset' --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
