@@ -15,6 +15,7 @@ alias g="git"
 alias h="history"
 alias j="jobs"
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias gw="./gradlew"
 
 # be nice
 alias please='sudo'

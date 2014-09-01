@@ -33,3 +33,7 @@ function parse_git_branch() {
 
 export PS1="\[$BOLD\]\[$RED\]\u \[$WHITE\]at \[$BLUE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$(parse_git_branch)\[$WHITE\]\[$RESET\]\n\$ "
 export PS2="\[$RED\]→ \[$RESET\]"
+
+# show a useful terminal title
+PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+
