@@ -24,3 +24,5 @@
 	log = true
 [rerere]
 	enabled = true
+[push]
+	default = simple
