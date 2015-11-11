@@ -36,5 +36,8 @@ shopt -s cdspell
 source "${HOME}/etc/git-completion.bash"
 complete -o default -o nospace -F _git g
 
+# add tab completion for vagrant
+source "${HOME}/etc/vagrant-completion.bash"
+
 # add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "${HOME}/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh

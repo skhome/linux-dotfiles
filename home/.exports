@@ -20,8 +20,5 @@ export LANG="en_US"
 # don’t clear the screen after quitting a manual page
 export MANPAGER="less -X"
 
-# always enable colored `grep` output
-export GREP_OPTIONS="--color=auto"
-
 # add personal bin folder to path
 export PATH=$HOME/bin:$PATH
